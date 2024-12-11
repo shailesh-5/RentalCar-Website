@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Records</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+    <h1>Car Records</h1>
+    <form id="add-record-form">
+        <input type="text" id="full-name" placeholder="Full Name" required>
+        <input type="text" id="plate-number" placeholder="Plate Number" required>
+        <input type="text" id="color" placeholder="Color" required>
+        <input type="tel" id="phone-number" placeholder="Phone Number" required>
+        <button type="submit">Add Record</button>
+    </form>
+    <table id="car-records-table">
+        <thead>
+            <tr>
+                <th>Full Name</th>
+                <th>Plate Number</th>
+                <th>Color</th>
+                <th>Phone Number</th>
+                <th>Check-in Time</th>
+                <th>Remove</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <script>
+        const form = document.getElementById('add-record-form');
+        const tableBody = document.getElementById('car-records-table').getElementsByTagName('tbody')[0];
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const fullName = document.getElementById('full-name').value;
+            const plateNumber = document.getElementById('plate-number').value;
+            const color = document.getElementById('color').value;
+            const phoneNumber = document.getElementById('phone-number').value;
+            const checkInTime = new Date().toLocaleString();
+
+            const newRow = tableBody.insertRow();
+            newRow.insertCell().textContent = fullName;
+            newRow.insertCell().textContent = plateNumber;
+            newRow.insertCell().textContent = color;
+            newRow.insertCell().textContent = phoneNumber;
+            newRow.insertCell().textContent = checkInTime;
+            newRow.insertCell().innerHTML = `<button onclick="removeRecord(${newRow.rowIndex})">Remove</button>`;
+
+            form.reset();
+        });
+
+        function removeRecord(index) {
+            tableBody.deleteRow(index);
+        }
+    </script>
+</body>
+</html>

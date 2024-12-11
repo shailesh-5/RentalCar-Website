@@ -1,0 +1,83 @@
+*{
+    margin:0;
+    padding:0;
+    
+    }
+    body{
+    background-image: url(Marken_BMW_Group_Range.jpg);
+    background-repeat: repeat;
+    background-size: 110% ;
+    }
+    h1{
+    background-image: url(unnamed.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100px;
+    color:rgba(8, 8, 8, 0.858);
+    padding: 20px;
+    text-align: center;
+    
+    
+    border-bottom: 30px solid black ;
+    }
+    .nav{
+    float:center;
+    list-style-type:none;
+    display: -webkit-inline-flex;
+    
+    }
+    .nav li{
+    
+    margin-top:20px;
+    margin-left:50px;
+    text-align:center;
+    height: 25px;
+    line-height: 25px;
+    background-image: url(unnamed.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100px;
+    width: 250px;
+    border-top: 3px solid yellow ;
+    border-bottom: 3px solid yellow ;
+    border-left: 3px solid yellow ;
+    border-right: 3px solid yellow ;
+    
+    }
+    .nav li a{
+    color: black;
+    font-size: 18px;
+    font-family: casteller;
+    text-decoration: none;
+    
+    }
+    .sub-menu{
+    display: none;
+    position: absolute;
+    list-style-type: none;
+    margin-top: 100px;
+    margin-left: -55px;
+    }
+    .nav li:hover .sub-menu{
+    display: block;
+    
+    }
+    .sub-menu-one{
+    display: none;
+    list-style-type: none;
+    margin-left:250px;
+    margin-top: -40px;
+    border-bottom: 2px solid black ;
+    }
+    .sub-menu li:hover .sub-menu-one{
+    display: block;
+    
+    
+    }
+    .nav input[type=text]{
+    padding: 10px;
+    parging-top: 10px;
+    margin-left:10px;
+    margin-top: -10px;
+    
+    }
+    
+    
